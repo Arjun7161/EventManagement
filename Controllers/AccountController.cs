@@ -17,48 +17,67 @@ namespace EventManagementMVC.Controllers
             _signInManager = signInManager;
         }
 
+        // Show registration page
         public IActionResult Register() => View();
 
+        // Handle registration POST
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+
+            var user = new ApplicationUser
             {
-                var user = new ApplicationUser
-                {
-                    UserName = model.Email,
-                    Email = model.Email
-                };
+                UserName = model.Email,
+                Email = model.Email,
+                EmailConfirmed = true
+            };
 
-                var result = await _userManager.CreateAsync(user, model.Password);
+            var result = await _userManager.CreateAsync(user, model.Password);
 
-                if (result.Succeeded)
-                {
-                    await _signInManager.SignInAsync(user, false);
-                    return RedirectToAction("Index", "Events");
-                }
+            if (result.Succeeded)
+            {
+                await _signInManager.SignInAsync(user, false);
+                return RedirectToAction("Index", "Events");
             }
+
+            foreach (var error in result.Errors)
+                ModelState.AddModelError("", error.Description);
+
             return View(model);
         }
 
+        // Show login page
         public IActionResult Login() => View();
 
+        // Handle login POST
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            if (ModelState.IsValid)
-            {
-                var result = await _signInManager.PasswordSignInAsync(
-                    model.Email, model.Password, false, false);
+            if (!ModelState.IsValid)
+                return View(model);
 
-                if (result.Succeeded)
-                    return RedirectToAction("Index", "Events");
+            // Find user by email
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Invalid login");
+                return View(model);
             }
+
+            // Safe null-forgiving operator (!) to fix CS8604
+            var result = await _signInManager.PasswordSignInAsync(
+                user.UserName!, model.Password, isPersistent: false, lockoutOnFailure: false);
+
+            if (result.Succeeded)
+                return RedirectToAction("Index", "Events");
 
             ModelState.AddModelError("", "Invalid login");
             return View(model);
         }
 
+        // Logout user
+        [HttpPost]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
