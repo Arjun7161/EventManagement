@@ -213,4 +213,5 @@ C:\Users\Arjun\OneDrive\Desktop\EventManagementMVC\obj\Debug\net10.0\EventManage
 C:\Users\Arjun\OneDrive\Desktop\EventManagementMVC\obj\Debug\net10.0\ref\EventManagementMVC.dll
 C:\Users\Arjun\OneDrive\Desktop\EventManagementMVC\obj\Debug\net10.0\compressed\ux6n1pohxn-{0}-2msz2b406m-2msz2b406m.gz
 C:\Users\Arjun\OneDrive\Desktop\EventManagementMVC\obj\Debug\net10.0\EventManagementMVC.sourcelink.json
-C:\Users\Arjun\OneDrive\Desktop\EventManagementMVC\obj\Debug\net10.0\compressed\muiuzbvbpt-{0}-2jbqvjmtam-2jbqvjmtam.gz
+C:\Users\Arjun\OneDrive\Desktop\EventManagementMVC\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Arjun\OneDrive\Desktop\EventManagementMVC\obj\Debug\net10.0\compressed\muiuzbvbpt-{0}-ds1duxld2u-ds1duxld2u.gz

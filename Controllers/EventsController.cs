@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using EventManagementMVC.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EventManagementMVC.Controllers
 {
+    [Authorize]
     public class EventsController : Controller
     {
         // Show all events

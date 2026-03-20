@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using EventManagementMVC.Models;
 
-namespace YourNamespace.Data
+namespace EventManagementMVC.Data
 {
     public class ApplicationUser : IdentityUser
     {
