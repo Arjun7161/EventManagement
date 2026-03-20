@@ -1,0 +1,50 @@
+body {
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #333;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* white transparent */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+h2 {
+    color: #240be1;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.event-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.btn {
+    color: #fff;
+    background-color: #258cfb;
+    border: none;
+}
+
+
+footer {
+    height: 40px;
+    line-height: 40px;
+    background-color: #f8f9fa;
+    text-align: center;
+    font-size: 0.8rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
