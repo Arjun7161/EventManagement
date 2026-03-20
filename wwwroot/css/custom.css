@@ -5,13 +5,19 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
 
 .container {
     background-color: rgba(255, 255, 255, 0.9);
-    /* white transparent */
     padding: 20px;
+    padding-bottom: 60px;
     border-radius: 10px;
+    max-width: 900px;
+    margin: 50px auto;
 }
 
 
@@ -35,6 +41,9 @@ h2 {
     color: #fff;
     background-color: #258cfb;
     border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 
@@ -44,7 +53,8 @@ footer {
     background-color: #f8f9fa;
     text-align: center;
     font-size: 0.8rem;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    position: relative;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
 }
